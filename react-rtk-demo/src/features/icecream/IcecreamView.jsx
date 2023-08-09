@@ -15,4 +15,4 @@ export const IcecreamView = () => {
       <button onClick={()=>dispatch(restocked(value))}>Restock Icecreams</button>
     </div>
   )
-}
+};
