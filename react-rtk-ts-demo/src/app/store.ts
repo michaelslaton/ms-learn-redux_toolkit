@@ -1,11 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { reduxLogger } from 'redux-logger';
 import cakeReducer from '../features/cake/cakeSlice';
 import icecreamReducer from '../features/icecream/icecreamSlice';
 import userReducer from '../features/user/userSlice';
-import { createLogger } from 'redux-logger';
+// import { createLogger } from 'redux-logger';
 
-const logger = createLogger();
+// const logger = createLogger();
 
 const store = configureStore({
   reducer: {
@@ -13,7 +12,9 @@ const store = configureStore({
     icecream: icecreamReducer,
     user: userReducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
+  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
 });
 
 export default store;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
